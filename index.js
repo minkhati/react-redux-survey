@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+require('./models/User'); // this should load before passport
 require('./services/passport'); // just caall passport file from services folder
-require('./models/User');
 
 mongoose.connect(keys.mongoURI);
 
