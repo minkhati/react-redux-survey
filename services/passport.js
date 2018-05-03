@@ -21,7 +21,8 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback'
+      callbackURL: '/auth/google/callback', // Relative URL
+      proxy: true
     },
     (accessToken, refreshToken, profile, done) => {
       // Mongodb query is async so use promise
