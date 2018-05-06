@@ -12,6 +12,7 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 
+// These following four middleware are used for every request that comes in
 app.use(bodyParser.json()); // any post request comes in get parsed into json
 app.use(
   cookieSession({
