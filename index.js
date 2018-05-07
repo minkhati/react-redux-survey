@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
-
 const keys = require('./config/keys');
+
 require('./models/User'); // this should load before passport
+require('./models/Survey');
 require('./services/passport'); // just caall passport file from services folder
 
 mongoose.connect(keys.mongoURI);
