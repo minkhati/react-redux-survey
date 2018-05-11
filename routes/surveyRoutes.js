@@ -11,6 +11,11 @@ module.exports = app => {
     res.send('Thanks for voting!');
   });
 
+  app.post('/api/surveys/webhooks', (req, res) => {
+    console.log(req.body);
+    res.send({});
+  });
+
   // Before creating a survey user should be loggedin and should have sufficient credits
   // when someone send post request '/api/surveys' then make sure requireLogin runs
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
